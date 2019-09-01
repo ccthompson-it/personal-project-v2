@@ -1,14 +1,7 @@
-
 module.exports = {
-  insertDay,
-  getCityInfo
+  getBeat
 }
 
-function insertDay(dayData, db) {
-  let city = dayData.city
-  return db(city).update(dayData).where('id', 1)
-}
-
-function getCityInfo(city, db) {
-  return db(city)
+function getBeat (id, db = connection) {
+  return db('beats').select().where('id', id)
 }

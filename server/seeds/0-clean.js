@@ -2,9 +2,7 @@ exports.seed = function (knex, Promise) {
   const empty = table =>
     () => knex(table).del()
 
-  return empty('wellington')()
-    .then(empty('auckland'))
-    .then(empty('christchurch'))
+  return empty('beats')()
   // Chain calls to empty in
   // order as required, e.g.:
   // .then(empty('profiles'))
