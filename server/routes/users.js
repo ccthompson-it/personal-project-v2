@@ -8,8 +8,9 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
-router.get('/get-beat', (req, res) => {
-  db.getBeat()
+router.get('/get-beat/:id', (req, res) => {
+  var id = req.params.id
+  db.getBeat(id, req.app.connection)
     .then(beat => {
       res.json(beat)
     })
