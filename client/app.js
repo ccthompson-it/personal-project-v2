@@ -2,8 +2,8 @@ import request from 'superagent'
 
 export function launchApp() {
     setButtons()
-    request.get('/get-beat/1')
-    .then(beat => { playBeat(beat.body) })
+    document.getElementById('play').addEventListener('click', (e) => {request.get('/get-beat/1')
+    .then(beat => { playBeat(beat.body, 0) })})
 }
 
 function setButtons () {
@@ -85,20 +85,27 @@ function recordKey (key) {
 
   // Play PreRecorded Audio
 
-function playBeat (beat) {
+function playBeat (beat, count) {
     let wait = 0
-    beat.sounds = JSON.parse(beat.sounds)
-    beat.timings = JSON.parse(beat.timings)
+    if(count == 0) {
+      beat.sounds = JSON.parse(beat.sounds)
+      beat.timings = JSON.parse(beat.timings)
+    }
     
-    for (let i = 0; i < beat.sounds.length; i++) {
-        let audio = new Audio('audio/' + beat.sounds[i] + '.wav')
-        if (i == 0) {
-            playAudio(audio)
-        }
-        else {
-            wait = beat.timings[i] - beat.timings[i-1]
-            setTimeout(playAudio(audio), wait)
-        }
+    let audio = new Audio('audio/' + beat.sounds[count] + '.wav')
+    
+    playAudio(audio)
+    console.log(audio)
+    
+    if (count == beat.sounds.length - 1) {
+        console.log('audio finished')
+    }
+    
+    else {
+        wait = beat.timings[count + 1] - beat.timings[count]
+        count += 1
+        console.log(wait, count)
+        setTimeout(playBeat(beat, count), wait)
     }
 }
 
