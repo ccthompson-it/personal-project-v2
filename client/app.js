@@ -95,7 +95,6 @@ function playBeat (beat, count) {
     let audio = new Audio('audio/' + beat.sounds[count] + '.wav')
     
     playAudio(audio)
-    console.log(audio)
     
     if (count == beat.sounds.length - 1) {
         console.log('audio finished')
@@ -104,8 +103,7 @@ function playBeat (beat, count) {
     else {
         wait = beat.timings[count + 1] - beat.timings[count]
         count += 1
-        console.log(wait, count)
-        setTimeout(playBeat(beat, count), wait)
+        setTimeout(() => playBeat(beat, count), wait)
     }
 }
 
