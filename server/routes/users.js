@@ -19,4 +19,8 @@ router.get('/get-beat/:id', (req, res) => {
     })
 })
 
+router.post('/add-beat/:id', (req, res) => {
+  console.log('connected')
+})
+
 module.exports = router
