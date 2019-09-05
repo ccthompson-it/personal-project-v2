@@ -20,7 +20,15 @@ router.get('/get-beat/:id', (req, res) => {
 })
 
 router.post('/add-beat/:id', (req, res) => {
-  console.log('connected')
+  let beat = {
+    beat_id: 2,
+    sound: req.params.id,
+    timing: Date.now()
+  }
+  db.addBeat(beat, req.app.connection)
+    .then(() => {
+      console.log('worked!')
+    })
 })
 
 module.exports = router
