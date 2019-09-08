@@ -9,7 +9,7 @@ export function launchApp() {
 }
 
 function setButtons() {
-  var buttons = Array.from(document.getElementsByClassName('sound'))
+  var buttons = Array.from(document.getElementsByClassName('sound round'))
   buttons.map((button, index) => {
     var newAudio = setAudio(button.id)
     setAudioEvent(button.id, newAudio, index)
@@ -46,7 +46,7 @@ function playAudio(audio) {
 
 function checkRecordingStatus(buttons) {
   var recButton = document.getElementById('record')
-  if (recButton.classList.length > 0) {
+  if (recButton.classList.length > 1) {
     recButton.classList.remove('recording')
     removeAudioRecorders(buttons)
   } else {
