@@ -4,28 +4,38 @@
     <title>Drum Pad</title>
     <script src='/bundle.js'></script>
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <button class="sound" id="basskick">Basskick (0)</button>
-    <button class="sound" id="kick">Kick (1)</button>
-    <button class="sound" id="snare">Snare (2)</button>
-    <br>
-    <button class="sound" id="clap">Clap (3)</button>
-    <button class="sound" id="snap">snap (4)</button>
-    <button class="sound" id="cowbell">Cowbell (5)</button>
-    <br>
-    <button class="sound" id="crash">Crash (6)</button>
-    <button class="sound" id="hat">Hat (7)</button>
-    <button class="sound" id="softhat">Soft Hat (8)</button>
-    <br>
-    <button class="sound" id="coconut">Coconut (9)</button>
-    <br>
-    <button id="record">Record</button>
-    <button id="play">Play</button>
-    <br>
-    <a href="https://soundpacks.com/free-sound-packs/bryson-tiller-drum-kit/">Bryson Tiller Drum Kit (Free Download) - SoundPacks.com</a>
-    <br>
-    <a href="https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/">Lo-Fi Hip-Hop Drum Kit (Free Download) - SoundPacks.com</a>
+    <header>
+      <h1 id="main-title">Beat Pad</h1>
+      <div id="controls">
+        <button id="record" class="round">Record</button>
+        <button id="play" class="round">Play</button>
+      </div>
+    </header>
+    <div id="sound-pad">
+      <button class="sound round" id="basskick">Basskick (0)</button>
+      <button class="sound round" id="kick">Kick (1)</button>
+      <button class="sound round" id="snare">Snare (2)</button>
+      <button class="sound round" id="clap">Clap (3)</button>
+      <button class="sound round" id="snap">snap (4)</button>
+      <button class="sound round" id="cowbell">Cowbell (5)</button>
+      <button class="sound round" id="crash">Crash (6)</button>
+      <button class="sound round" id="hat">Hat (7)</button>
+      <button class="sound round" id="softhat">Soft Hat (8)</button>
+      <button class="sound round" id="coconut">Coconut (9)</button>
+    </div>
+    
+    <footer>
+      <p>&copy; Caleb Thompson</p>
+      <div id="sound-links">
+        <a href="https://soundpacks.com/free-sound-packs/bryson-tiller-drum-kit/">Bryson Tiller Drum Kit (Free Download) - SoundPacks.com</a>
+        <a href="https://soundpacks.com/free-sound-packs/lo-fi-hip-hop-drum-kit/">Lo-Fi Hip-Hop Drum Kit (Free Download) - SoundPacks.com</a>
+      </div>
+    </footer>
+    
   </body>
 </html>
 
