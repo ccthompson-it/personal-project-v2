@@ -4,7 +4,7 @@ import request from 'superagent'
 export function launchApp() {
   setButtons()
   document.getElementById('play').addEventListener('click', (e) => {
-    request.get('/get-beat/1')
+    request.get('/get-beat/2')
     .then(beat => { playBeat(beat.body, 0) })
   })
 }
