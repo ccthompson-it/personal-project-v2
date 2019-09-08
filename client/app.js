@@ -1,6 +1,5 @@
 import request from 'superagent'
 
-
 export function launchApp() {
   setButtons()
   document.getElementById('play').addEventListener('click', (e) => {
@@ -97,7 +96,7 @@ function recordKey(key) {
 // Play PreRecorded Audio
 
 function playBeat(beat, count) {
-  console.log(beat, count)
+  
   let wait = 0
 
   let audio = new Audio('audio/' + beat[count].sound + '.wav')
@@ -110,6 +109,7 @@ function playBeat(beat, count) {
 
   else {
     wait = beat[count + 1].timing - beat[count].timing
+    console.log(beat[count], wait)
     count += 1
     setTimeout(() => playBeat(beat, count), wait)
   }
