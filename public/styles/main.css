@@ -36,6 +36,12 @@ header {
     float: right;
 }
 
+#controls > button {
+    background-color: #3a4750;
+    color: #eeeeee; 
+}
+
+
 #sound-pad {
     width: 60vw;
     margin-left: 20vw;
