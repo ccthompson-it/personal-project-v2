@@ -27,7 +27,7 @@ router.post('/add-beat/:id', (req, res) => {
   }
   db.addBeat(beat, req.app.connection)
     .then(() => {
-      console.log('worked!')
+      res.send('worked!')
     })
 })
 
