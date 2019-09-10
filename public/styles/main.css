@@ -117,10 +117,10 @@ span {
     display: block;
     background-color: #3a4750;
     position: relative;
-    top: 0;
-    left: 4.1vw;
-    width: 1vw;
-    height: 1vw;
+    margin-top: .5vw;
+    left: 42.5%;
+    width: 15%;
+    height: 15%;
     border-radius: 50%;
 }
 
