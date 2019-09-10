@@ -5,6 +5,9 @@ export function launchApp() {
   setUniqueButtons()
 }
 
+
+// Buttons 
+
 function setButtons() {
   var buttons = Array.from(document.getElementsByClassName('sound round'))
   buttons.map((button, index) => {
@@ -17,9 +20,12 @@ function setButtons() {
 }
 
 function setUniqueButtons() {
-  document.getElementById('play').addEventListener('click', () => {
+  document.getElementById('play').addEventListener('click', (e) => {
+    e.target.disabled = true
     request.get('/get-beat')
-    .then(beat => { playBeat(beat.body, 0) })
+    .then(beat => { 
+      playBeat(beat.body, 0) 
+    })
   })
   document.getElementById('clear').addEventListener('click', () => {
     request.post('/clear-beat')
@@ -112,12 +118,12 @@ function playBeat(beat, count) {
   playAudio(audio)
 
   if (count == beat.length - 1) {
+    document.getElementById('play').disabled = false
     console.log('audio finished')
   }
 
   else {
     wait = beat[count + 1].timing - beat[count].timing
-    console.log(beat[count], wait)
     count += 1
     setTimeout(() => playBeat(beat, count), wait)
   }
