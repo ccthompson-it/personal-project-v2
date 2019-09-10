@@ -62,9 +62,11 @@ function checkRecordingStatus(buttons) {
   var recButton = document.getElementById('record')
   if (recButton.classList.length > 1) {
     recButton.classList.remove('recording')
+    document.getElementsByTagName('span')[0].id = ''
     removeAudioRecorders(buttons)
   } else {
     recButton.classList.add('recording')
+    document.getElementsByTagName('span')[0].id = 'rec-status'
     setRecordingListeners(buttons)
   }
 

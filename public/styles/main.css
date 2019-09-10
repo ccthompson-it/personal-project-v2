@@ -112,3 +112,18 @@ a:hover {
     box-shadow: 0px 0px .5vw #eeeeee;
     background-color: #d72323;
 }
+
+span {
+    display: block;
+    background-color: #3a4750;
+    position: relative;
+    top: 0;
+    left: 4.1vw;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+}
+
+#rec-status {
+    background-color: #d72323;
+}
