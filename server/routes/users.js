@@ -8,9 +8,8 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
-router.get('/get-beat/:id', (req, res) => {
-  var id = req.params.id
-  db.getBeat(id, req.app.connection)
+router.get('/get-beat', (req, res) => {
+  db.getBeat(req.app.connection)
     .then(beat => {
       res.json(beat)
     })
@@ -21,14 +20,20 @@ router.get('/get-beat/:id', (req, res) => {
 
 router.post('/add-beat/:id', (req, res) => {
   let beat = {
-    beat_id: 2,
     sound: req.params.id,
     timing: Date.now()
   }
   db.addBeat(beat, req.app.connection)
     .then(() => {
-      res.send('worked!')
+      res.send('Sound Added!')
     })
+})
+
+router.post('/clear-beat', (req, res) => {
+  db.clearBeat(req.app.connection)
+  .then(() => {
+    res.send('Audio Cleared!')
+  })
 })
 
 module.exports = router

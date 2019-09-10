@@ -1,12 +1,17 @@
 module.exports = {
   getBeat,
-  addBeat
+  addBeat,
+  clearBeat
 }
 
-function getBeat (id, db = connection) {
-  return db('beats').select().where('beat_id', id)
+function getBeat (db = connection) {
+  return db('beats').select()
 }
 
 function addBeat (beat, db = connection) {
   return db('beats').insert(beat)
+}
+
+function clearBeat(db = connection) {
+  return db('beats').del()
 }
