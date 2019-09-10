@@ -97,6 +97,7 @@ a:hover {
     color: #303841;
     background-color: #d72323;
     border: none;
+    outline: none;
     box-shadow: 0px 0px .5vw #eeeeee;
 }
 
