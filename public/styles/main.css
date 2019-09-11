@@ -33,12 +33,14 @@ header {
 }
 
 #controls {
+    height: 25vh;
     float: right;
 }
 
 #controls > .control {
     background-color: #3a4750;
     color: #eeeeee; 
+    vertical-align: middle;
 }
 
 
@@ -113,19 +115,39 @@ a:hover {
     background-color: #d72323;
 }
 
+/* Record Button */ 
+
 span {
     display: block;
-    background-color: #3a4750;
+    background-color: #a75c5c;
+    transition: ease-in-out .2s;
     position: relative;
-    margin-top: .5vw;
-    left: 42.5%;
-    width: 15%;
-    height: 15%;
+    left: 7.5%;
+    width: 85%;
+    height: 85%;
     border-radius: 50%;
 }
 
 #rec-status {
     background-color: #d72323;
+    transition: ease-in-out .2s;
+}
+
+#inner-record {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: #3a4750;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#inner-record > p {
+    margin: 0;
+    margin-top: 35%;
 }
 
 /* Slider */ 
