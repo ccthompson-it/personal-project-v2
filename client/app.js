@@ -20,13 +20,27 @@ function setButtons() {
 }
 
 function setUniqueButtons() {
+  setPlayButton()
+  setClearButton()
+  setTicker()
+}
+
+function setPlayButton() {
   document.getElementById('play').addEventListener('click', (e) => {
+    console.log('working')
     e.target.disabled = true
     request.get('/get-beat')
     .then(beat => { 
-      playBeat(beat.body, 0) 
+      if(beat.body.length > 0) {
+        playBeat(beat.body, 0)
+      } else {
+        e.target.disabled = false
+      }
     })
   })
+}
+
+function setClearButton() {
   document.getElementById('clear').addEventListener('click', () => {
     request.post('/clear-beat')
     .then(() => { alert('Audio Cleared') })
@@ -55,12 +69,41 @@ function playAudio(audio) {
   audio.play()
 }
 
+// metronome
+
+function setTicker() {
+  document.getElementById('ticker').addEventListener('click', (e) => {
+    let bpm = document.getElementById('slider').value
+    if (checkTickerStatus()) {loopTicker(bpm)}
+  })
+}
+
+function checkTickerStatus () {
+  let tickButton = document.getElementById('slider')
+  if(tickButton.classList.length == 0) {
+    tickButton.classList.add('ticking')
+    return true
+  } else {
+    tickButton.classList.remove('ticking')
+    return false
+  }
+}
+
+function loopTicker(bpm) {
+  let ticker = setInterval(() => {
+    if(document.getElementById('slider').classList.length == 0){
+      clearInterval(ticker)
+    }
+    playAudio(setAudio('softhat'))
+  }, (60000 / bpm))
+  
+}
 
 // Recording
 
 function checkRecordingStatus(buttons) {
   var recButton = document.getElementById('record')
-  if (recButton.classList.length > 1) {
+  if (recButton.classList.length > 2) {
     recButton.classList.remove('recording')
     document.getElementsByTagName('span')[0].id = ''
     removeAudioRecorders(buttons)

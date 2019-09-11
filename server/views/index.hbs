@@ -11,9 +11,9 @@
     <header>
       <h1 id="main-title">Beat Pad</h1>
       <div id="controls">
-        <button id="clear" class="round">Clear Recording</button>
-        <button id="record" class="round">Record<span></span></button>
-        <button id="play" class="round">Playback Audio</button>
+        <button id="clear" class="round control">Clear Recording</button>
+        <button id="record" class="round control">Record<span></span></button>
+        <button id="play" class="round control">Playback Audio</button>
       </div>
     </header>
     <div id="sound-pad">
@@ -27,6 +27,21 @@
       <button class="sound round" id="hat">Hat (7)</button>
       <button class="sound round" id="softhat">Soft Hat (8)</button>
       <button class="sound round" id="coconut">Coconut (9)</button>
+    </div>
+
+    <div id="ticker-box">
+      <div id = "slider-box">
+        <input type="range" id="slider" list="bpms" min="50", max="300", step="50">
+        <datalist id="bpms">
+          <option value="50"></option>
+          <option value="100"></option>
+          <option value="150"></option>
+          <option value="200"></option>
+          <option value="250"></option>
+          <option value="300"></option>
+        </datalist>
+      </div>
+      <button id="ticker" class="round control">Ticker</button>
     </div>
     
     <footer>

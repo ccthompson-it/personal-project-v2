@@ -36,7 +36,7 @@ header {
     float: right;
 }
 
-#controls > button {
+#controls > .control {
     background-color: #3a4750;
     color: #eeeeee; 
 }
@@ -126,4 +126,20 @@ span {
 
 #rec-status {
     background-color: #d72323;
+}
+
+/* Slider */ 
+
+#ticker-box {
+    display: flex;
+    position: fixed;
+    bottom: 5vw;
+    right: 3vw;
+}
+
+#slider-box {
+    padding-top: 7vw;
+}
+#slider {
+    width: 15vw;
 }
