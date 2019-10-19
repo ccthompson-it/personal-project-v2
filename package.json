@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "knex": "knex",
-    "dev": "nodemon --watch server & webpack --watch client",
+    "client": "webpack --watch client",
+    "server": "nodemon --watch server",
     "start": "node server/index",
     "test": "jest --watchAll"
   },
