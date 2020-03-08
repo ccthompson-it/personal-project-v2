@@ -109,6 +109,7 @@ function checkRecordingStatus(buttons) {
     removeAudioRecorders(buttons)
   } else {
     recButton.classList.add('recording')
+    request.post('/clear-beat').then(() => {})
     document.getElementsByTagName('span')[0].id = 'rec-status'
     setRecordingListeners(buttons)
   }
