@@ -33,7 +33,7 @@
     "babel-loader": "^8.0.6",
     "cheerio": "1.0.0-rc.2",
     "jest": "^24.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "superagent": "^5.1.0",
     "supertest": "^4.0.2",
     "webpack": "^4.39.2",
